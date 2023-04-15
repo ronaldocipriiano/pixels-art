@@ -5,3 +5,18 @@
     height: 50px;
     display: inline-block;
 }
+
+#pixel-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+}
+
+.pixel {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
