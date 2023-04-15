@@ -10,16 +10,24 @@ const randomColor = () => {
   return color;
 };
 
-const resetColor = () => {
-  const colors = [];
-  colors.push('#000000');
-  while (colors.length < 4) {
-    const newColor = randomColor();
-    if (!colors.includes(newColor) && newColor !== '#FFFFFF') {
-      colors.push(newColor);
-    }
-  }
+const paletteLocalStorage = (colors) => {
+  localStorage.setItem('colorPalette', JSON.stringify(colors));
+};
 
+const loadPaletteLocalStorage = () => {
+  const savedPalette = localStorage.getItem('colorPalette');
+  if (savedPalette) {
+    return JSON.parse(savedPalette);
+  }
+  return null;
+};
+
+const resetColor = () => {
+  let colors = ['#000000', randomColor(), randomColor(), randomColor()];
+  while (new Set(colors).size < 4) {
+    colors = ['#000000', randomColor(), randomColor(), randomColor()];
+  }
+  paletteLocalStorage(colors);
   const colorDivs = document.querySelectorAll('.color');
   colorDivs.forEach((div, index) => {
     div.style.backgroundColor = colors[index];
@@ -34,6 +42,14 @@ for (let index = 0; index < 4; index += 1) {
   colorPalette.appendChild(newColor);
 }
 
-resetColor();
+const savedPalette = loadPaletteLocalStorage();
+if (savedPalette) {
+  const colorDivs = document.querySelectorAll('.color');
+  colorDivs.forEach((div, index) => {
+    div.style.backgroundColor = savedPalette[index];
+  });
+} else {
+  resetColor();
+}
 
 buttonRandomColor.addEventListener('click', resetColor);
