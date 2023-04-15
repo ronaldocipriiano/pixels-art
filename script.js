@@ -10,24 +10,29 @@ const randomColor = () => {
   return color;
 };
 
-const resetColor = () => {};
-const colors = [];
-colors.push('#000000');
-while (colors.length < 4) {
-  const newColor = randomColor();
-  if (!colors.includes(newColor) && newColor !== '#FFFFFF') {
-    colors.push(newColor);
+const resetColor = () => {
+  const colors = [];
+  colors.push('#000000');
+  while (colors.length < 4) {
+    const newColor = randomColor();
+    if (!colors.includes(newColor) && newColor !== '#FFFFFF') {
+      colors.push(newColor);
+    }
   }
-}
+
+  const colorDivs = document.querySelectorAll('.color');
+  colorDivs.forEach((div, index) => {
+    div.style.backgroundColor = colors[index];
+  });
+};
 
 colorPalette.innerHTML = '';
-colors.forEach((color) => {
+for (let index = 0; index < 4; index += 1) {
   const newColor = document.createElement('div');
-  newColor.style.backgroundColor = color;
   newColor.classList.add('color');
   newColor.style.border = '1px solid black';
   colorPalette.appendChild(newColor);
-});
+}
 
 resetColor();
 
