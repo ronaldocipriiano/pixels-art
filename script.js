@@ -1,12 +1,33 @@
 const colorPalette = document.getElementById('color-palette');
 const buttonRandomColor = document.getElementById('button-random-color');
 const pixelBoard = document.getElementById('pixel-board');
+const colorDivs = document.querySelectorAll('.color');
 
 for (let index = 0; index < 25; index += 1) {
   const pixel = document.createElement('div');
   pixel.classList.add('pixel');
   pixelBoard.appendChild(pixel);
 }
+const selectColor = (event) => {
+  colorDivs.forEach((div) => {
+    div.classList.remove('selected');
+  });
+  const colorDiv = event.target;
+  colorDiv.classList.add('selected');
+  const selectedColors = document.querySelectorAll('.selected');
+  if (selectedColors.length > 1) {
+    selectedColors.forEach((color) => {
+      if (color !== colorDiv) {
+        color.classList.remove('selected');
+      }
+    });
+  }
+};
+const fillPixel = (event) => {
+  const pixel = event.target;
+  const color = document.querySelector('.selected').style.backgroundColor;
+  pixel.style.backgroundColor = color;
+};
 
 const randomColor = () => {
   const genereteColors = '0123456789ABCDEF';
@@ -67,3 +88,8 @@ if (savedPalette) {
 }
 
 buttonRandomColor.addEventListener('click', resetColor);
+
+const pixels = document.querySelectorAll('.pixel');
+pixels.forEach((pixel) => {
+  pixel.addEventListener('click', fillPixel);
+});
