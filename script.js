@@ -30,14 +30,21 @@ const loadPaletteLocalStorage = () => {
 };
 
 const resetColor = () => {
-  let colors = ['#000000', randomColor(), randomColor(), randomColor()];
-  while (new Set(colors).size < 4) {
-    colors = ['#000000', randomColor(), randomColor(), randomColor()];
+  let colors = ['#000000'];
+  while (colors.length < 4) {
+    const newColor = randomColor();
+    if (!colors.includes(newColor) && newColor !== '#FFFFFF') {
+      colors.push(newColor);
+    }
   }
   paletteLocalStorage(colors);
   const colorDivs = document.querySelectorAll('.color');
   colorDivs.forEach((div, index) => {
     div.style.backgroundColor = colors[index];
+    div.classList.remove('selected');
+    if (index === 0) {
+      div.classList.add('selected');
+    }
   });
 };
 
