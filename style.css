@@ -1,25 +1,128 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+
+header {
+  width: 98%;
+  padding: 10px;
+  background-color: #222;
+  border-bottom: 1px solid #444;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #777;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 5px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+form {
+  margin-top: 20px;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  color: #777;
+  margin-top: 20px;
+}
+
+#color-palette {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .color {
-    border: 1px solid black;
-    margin: 0 3px;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#board-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#board-size {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#generate-board {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#button-random-color {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#clear-board {
+  background-color: #f00;
+  color: #fff;
 }
 
 #pixel-board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 250px;
-    height: 250px;
-    margin-top: 10px;
+  display: grid;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 10px;
+  grid-template-columns: repeat(5, 40px);
+  grid-auto-rows: repeat(40px);
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }
 
 .pixel {
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border: 1px solid #000000;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.1s;
 }
-#board-controls {
-    margin-top: 10px;
-  }
+
+.pixel:hover {
+  background-color: black;
+}
