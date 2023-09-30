@@ -1,10 +1,27 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Paleta de Cores
+
+Este é um projeto desenvolvido por mim como pessoa estudante da Trybe. O projeto consiste em uma aplicação web que permite criar e gerenciar uma paleta de cores e uma grade de pixels coloridos. Ele oferece recursos para salvar, carregar, limpar e gerar cores aleatórias.
+
+## Funcionalidades
+
+- Criação de uma paleta de cores personalizada.
+- Geração de cores aleatórias.
+- Criação de uma grade de pixels com tamanhos ajustáveis.
+- Seleção de cores a partir da paleta.
+- Preenchimento dos pixels da grade com cores selecionadas.
+- Limpeza da grade.
+- Salvamento e carregamento do estado da paleta e da grade.
+
+## Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+
+## Autor
+
+- Ronaldo Cipriano
+
+---
+
+Desenvolvido por Ronaldo Cipriano (2023).
