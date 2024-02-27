@@ -20,8 +20,7 @@ Este é um projeto desenvolvido por mim como pessoa estudante da Trybe. O projet
 
 ## Autor
 
-- Ronaldo Cipriano
+[GitHub - ronaldocipriiano](https://github.com/ronaldocipriiano/)
 
----
-
-Desenvolvido por Ronaldo Cipriano (2023).
+## Licença
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.

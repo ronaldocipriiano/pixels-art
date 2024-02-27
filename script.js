@@ -52,8 +52,6 @@ const createPixelsBoard = (colors, boardSize) => {
   let adjustedBoardSize = boardSize;
   if (adjustedBoardSize < 5) adjustedBoardSize = 5;
   if (adjustedBoardSize > 50) adjustedBoardSize = 50;
-  console.log('colors:', colors);
-  console.log('adjustedBoardSize:', adjustedBoardSize);
 
   pixelBoard.innerHTML = '';
   pixelBoard.style.gridTemplateColumns = `repeat(${adjustedBoardSize}, 40px)`;
@@ -105,7 +103,6 @@ const fillPixels = () => {
       const pixel = target;
       const selectedColor = document.querySelector('.selected');
       if (!selectedColor) return;
-      console.log('Pixel clicked!');
       pixel.style.backgroundColor = selectedColor.style.backgroundColor;
       saveBoard();
     });
@@ -148,7 +145,6 @@ const generateBoard = () => {
 
     const boardSizeInput = document.querySelector('#board-size');
 
-    console.log('boardSizeInput.value:', boardSizeInput.value);
     if (boardSizeInput.value === '') {
       alert('Board inválido!');
       return;
